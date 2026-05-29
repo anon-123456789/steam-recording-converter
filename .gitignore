@@ -1,4 +1,6 @@
 node_modules/
 .DS_Store
 /src/assets/core/*
+!/src/assets/core/.gitkeep
 /src/assets/ffmpeg/*
+!/src/assets/ffmpeg/.gitkeep
