@@ -1,0 +1,13 @@
+.customized-card {
+    width: 20rem;
+}
+.drop-target-card {
+    width: 20rem;
+    border-style: dashed;
+    border-width: 2px;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.drop-target-card.dragging-over {
+    background-color: #424649;
+    border-color: #373b3e;
+}

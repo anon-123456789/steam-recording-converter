@@ -1,0 +1,16 @@
+{
+  "name": "steam-recording-converter-dev-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "license": "GPL-3.0-or-later",
+  "author": "anon-123456789",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
