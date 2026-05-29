@@ -153,14 +153,19 @@ document.body.addEventListener("drop", async (event) => {
         }
         bootstrap.Collapse.getOrCreateInstance(progressBar.parentElement).hide()
         console.debug(await ffmpeg.listDir("/output"))
-        const outputURL = await ffmpeg.getFileURL("/output/session.mp4")
-        console.log(outputURL)
-        downloadButton.href = outputURL
-        downloadButton.download = `${entry.name}.mp4`
-        downloadButton.classList.remove("disabled")
-        progressTitle.innerHTML = "All done!"
-        progressIcon.classList.remove("bi-arrow-repeat")
-        progressIcon.classList.add("bi-check-lg")
+        try {
+            const outputURL = await ffmpeg.getFileURL("/output/session.mp4")
+            console.log(outputURL)
+            downloadButton.href = outputURL
+            downloadButton.download = `${entry.name}.mp4`
+            downloadButton.classList.remove("disabled")
+            progressTitle.innerHTML = "All done!"
+            progressIcon.classList.remove("bi-arrow-repeat")
+            progressIcon.classList.add("bi-check-lg")
+        } catch (error) {
+            console.error(error)
+            alert(`Export failed!\n${error}\nSee the JavaScript console for more details.`)
+        }
     }
 })
 
